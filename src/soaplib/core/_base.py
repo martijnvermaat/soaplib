@@ -172,7 +172,7 @@ class MethodContext(object):
 
         self.method_name = None
         self.descriptor = None
-        
+
 class MethodDescriptor(object):
     '''
     This class represents the method signature of a soap method,
@@ -328,7 +328,7 @@ class Application(object):
         return self.__classes[key]()
 
     def parse_xml_string(self, xml_string, charset=None):
-        return _parse_xml_string(x, charset)
+        return _parse_xml_string(xml_string, charset)
 
     def decompose_incoming_envelope(self, ctx, envelope_xml, xmlids=None):
         header, body = _from_soap(envelope_xml, xmlids)
@@ -626,7 +626,7 @@ class Application(object):
     name = property(get_name)
 
     def get_tns(self):
-        """Returns default namespace that is seen in the targetNamespace 
+        """Returns default namespace that is seen in the targetNamespace
         attribute of the definitions tag.
 
         Not meant to be overridden.
